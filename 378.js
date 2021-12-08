@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdmf_user=self.webpackChunkdmf_user||[]).push([[378],{378:(e,s,u)=>{u.r(s),u.d(s,{default:()=>a});var n=u(950),r=u.n(n),t=u(476);const a=function(){return(0,t.tZ)(r().Fragment,null,"ResetPassword")}}}]);
