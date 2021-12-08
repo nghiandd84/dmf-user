@@ -10,6 +10,6 @@
     },
   
     "include": ["./src/**/*", "./dmf-type"],
-    "exclude": ["./dmf-type/dmf_layout.d.ts"]
+    "exclude": ["./dmf-type/dmf_user.d.ts"]
   }
   

@@ -1,13 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import tw from 'twin.macro';
 
 import './index.scss';
+import NotAuthLayout from 'dmf_layout/layout/NotAuthLayout';
+import Header from 'dmf_layout/Header';
+import Footer from 'dmf_layout/Footer';
 import H1 from 'dmf_ui/typography/H1';
 
-const App = () => (
-  <div css={[tw`max-w-6xl mx-auto`]} tw=" mt-10 px-4">
-    <H1 color="primary">Micro frontend App</H1>
-  </div>
+const App = () => (<>
+  <NotAuthLayout header={<Header />} footer={<Footer />} className="u-demo">
+      <div>
+        <H1>Login Page</H1>
+        
+      </div>
+    </NotAuthLayout>
+    </>
 );
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.body);

@@ -1,5 +1,11 @@
 {
   "name": "dmf_user",
   "exposes": {
+    "./login/Login": "./src/components/login/Login/Login",
+    "./login/LoginButton": "./src/components/login/LoginButton/LoginButton",
+    "./password/ChangePassword": "./src/components/password/ChangePassword/ChangePassword",
+    "./password/ResetPassword": "./src/components/password/ResetPassword/ResetPassword",
+    "./signup/SignUp": "./src/components/signup/SignUp/SignUp",
+    "./UpdateUser": "./src/components/UpdateUser/UpdateUser"
   }
 }

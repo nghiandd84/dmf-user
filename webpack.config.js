@@ -17,7 +17,7 @@ module.exports = (env) => {
     },
 
     devServer: {
-      port: 3000,
+      port: 3001,
       historyApiFallback: true,
     },
 
@@ -54,6 +54,9 @@ module.exports = (env) => {
         remotes: {
           dmf_ui:
             'dmf_ui@https://nghiandd84.github.io/dmf-ui/remoteEntry.js?rd=' +
+            rd,
+          dmf_layout:
+            'dmf_layout@https://nghiandd84.github.io/dmf-layout/remoteEntry.js?rd=' +
             rd,
         },
         shared: {
