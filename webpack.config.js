@@ -5,9 +5,10 @@ const Dotenv = require('dotenv-webpack');
 const deps = require('./package.json').dependencies;
 const federationConfig = require('./federation.config.json');
 const rd = Math.floor(Math.random() * 10000);
-module.exports = (env) => {
+module.exports = (env, argv) => {
   const envData = env.env || 'local';
-  return {
+  console.log(env, argv);
+  const config = {
     output: {
       // publicPath: "http://localhost:3000/",
     },
@@ -79,4 +80,8 @@ module.exports = (env) => {
       }),
     ],
   };
+  if (argv.mode === 'development') {
+    config.devtool = 'source-map';
+  }
+  return config;
 };

@@ -1,4 +1,4 @@
-import { RootState } from 'dmf-user';
+
 import * as React from 'react';
 import { connect } from 'react-redux';
 
@@ -7,10 +7,11 @@ import * as actions from '../actions';
 
 import TodoListItem from './TodoListItem';
 import { Todo } from '../model/Todo';
+import { AppState } from '../../../store/reducer';
 
-const mapStateToProps = (state: RootState) => ({
-  isLoading: state.todos.isLoadingTodos,
-  todos: selectors.getTodos(state.todos) as Todo[],
+const mapStateToProps = (state: AppState) => ({
+  isLoading: state.user.todo.isLoadingTodos,
+  todos: selectors.getTodos(state.user.todo),
 });
 const dispatchProps = {
   removeTodo: actions.removeTodo,

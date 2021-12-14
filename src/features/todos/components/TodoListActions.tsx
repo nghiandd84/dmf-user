@@ -1,11 +1,17 @@
-import { RootState } from 'dmf-user';
 import * as React from 'react';
+import { RouterState } from 'connected-react-router';
+
 import { connect } from 'react-redux';
+import { UserState } from '../../../store/reducer';
 
 import { loadTodosAsync, saveTodosAsync } from '../actions';
 
-const mapStateToProps = (state: RootState) => ({
-  isLoading: state.todos.isLoadingTodos,
+const mapStateToProps = (state: {
+  user: UserState;
+  router: RouterState<any>;
+}) => ({
+  isLoading: state.user.todo.isLoadingTodos,
+  router: state.router
 });
 const dispatchProps = {
   loadTodos: loadTodosAsync.request,
@@ -18,8 +24,9 @@ type State = {};
 
 class TodoActions extends React.Component<Props, State> {
   render() {
+    console.log(this.props.router);
     const { loadTodos, saveTodos } = this.props;
-    const isLoading: boolean = this.props.isLoading as boolean;
+    const isLoading: boolean = this.props.isLoading || false;
     return (
       <section>
         <button

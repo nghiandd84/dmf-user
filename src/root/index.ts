@@ -1,22 +1,27 @@
 import { createStore, applyMiddleware } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { RootAction, RootState, Services } from 'dmf-user';
+import { createBrowserHistory } from 'history';
 
 import { composeEnhancers } from './utils';
 
-import rootReducer from './root-reducer';
+import rootReducer, { RootState } from './root-reducer';
 import rootEpic from './root-epic';
 
-import services from '../services';
+import AppServices, { AppService } from '../services';
+import { RootAction } from './root-action';
+
+type RootService = AppService;
 
 export const epicMiddleware = createEpicMiddleware<
   RootAction,
   RootAction,
   RootState,
-  Services
+  RootService
 >({
-  dependencies: services,
+  dependencies: AppServices,
 });
+
+export const history = createBrowserHistory();
 
 // configure middlewares
 const middlewares = [epicMiddleware];
@@ -27,7 +32,7 @@ const enhancer = composeEnhancers(applyMiddleware(...middlewares));
 const initialState: RootState = {} as any;
 
 // create store
-const store = createStore(rootReducer, initialState, enhancer);
+const store = createStore(rootReducer(history), initialState, enhancer);
 epicMiddleware.run(rootEpic);
 
 // export store singleton instance
