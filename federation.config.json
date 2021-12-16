@@ -6,6 +6,8 @@
     "./password/ChangePassword": "./src/components/password/ChangePassword/ChangePassword",
     "./password/ResetPassword": "./src/components/password/ResetPassword/ResetPassword",
     "./signup/SignUp": "./src/components/signup/SignUp/SignUp",
-    "./UpdateUser": "./src/components/UpdateUser/UpdateUser"
+    "./UpdateUser": "./src/components/UpdateUser/UpdateUser",
+    "./services": "./src/services/index",
+    "./store": "./src/store/index"
   }
 }

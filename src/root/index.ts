@@ -7,10 +7,9 @@ import { composeEnhancers } from './utils';
 import rootReducer, { RootState } from './root-reducer';
 import rootEpic from './root-epic';
 
-import AppServices, { AppService } from '../services';
-import { RootAction } from './root-action';
+import RootAction  from './root-action';
+import rootServices, { RootService } from './root-service';
 
-type RootService = AppService;
 
 export const epicMiddleware = createEpicMiddleware<
   RootAction,
@@ -18,7 +17,7 @@ export const epicMiddleware = createEpicMiddleware<
   RootState,
   RootService
 >({
-  dependencies: AppServices,
+  dependencies: rootServices,
 });
 
 export const history = createBrowserHistory();

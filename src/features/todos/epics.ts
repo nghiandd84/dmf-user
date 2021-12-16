@@ -6,9 +6,11 @@ import { loadTodosAsync, saveTodosAsync } from './actions';
 import { getTodos } from './selectors';
 import { AppState } from '../../store/reducer';
 import { AppAction } from '../../store/action';
-import { AppService } from '../../services';
+import { AppRootService } from '../../services';
 
-export const loadTodosEpic: Epic<AppAction, AppAction, AppState, AppService> = (
+
+
+export const loadTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService> = (
   action$,
   state$,
   { user }
@@ -23,7 +25,7 @@ export const loadTodosEpic: Epic<AppAction, AppAction, AppState, AppService> = (
     )
   );
 
-export const saveTodosEpic: Epic<AppAction, AppAction, AppState, AppService> = (
+export const saveTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService> = (
   action$,
   state$,
   { user }

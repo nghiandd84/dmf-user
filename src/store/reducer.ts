@@ -10,9 +10,9 @@ const userReducer = combineReducers({
 export type UserState = StateType<typeof userReducer>;
 
 export type AppState = {
-    [key: string]: any;
-    router: RouterState<any>;
-    user: UserState;
-}
+  [key: string]: any;
+  router: RouterState<any>;
+  user: UserState;
+};
 
-export default userReducer;
+export { userReducer };

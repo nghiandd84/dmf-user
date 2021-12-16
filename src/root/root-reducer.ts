@@ -3,13 +3,13 @@ import { connectRouter } from 'connected-react-router';
 
 import todosReducer from '../features/todos/reducer';
 import { History, createBrowserHistory } from 'history';
-import userReducer from '../store/reducer';
+import { reducer } from '../store';
 import { StateType } from 'typesafe-actions';
 
 const rootReducer = (history: History) =>
   combineReducers({
     router: connectRouter(history),
-    user: userReducer,
+    user: reducer.userReducer,
   });
 
 const rootReducerType = combineReducers({

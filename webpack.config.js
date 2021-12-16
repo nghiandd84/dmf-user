@@ -70,6 +70,26 @@ module.exports = (env, argv) => {
             singleton: true,
             requiredVersion: deps['react-dom'],
           },
+          'redux': {
+            singleton: true,
+            requiredVersion: deps.redux
+          },
+          'rxjs': {
+            singleton: true,
+            requiredVersion: deps.redux
+          },
+          'redux-observable': {
+            singleton: true,
+            requiredVersion: deps['redux-observable']
+          },
+          'connected-react-router': {
+            singleton: true,
+            requiredVersion: deps['connected-react-router']
+          },
+          'typesafe-actions': {
+            singleton: true,
+            requiredVersion: deps['typesafe-actions']
+          },
         },
       }),
       new MiniCssExtractPlugin({

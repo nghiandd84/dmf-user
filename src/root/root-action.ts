@@ -1,10 +1,12 @@
 import { routerActions } from 'connected-react-router';
 import { ActionType } from 'typesafe-actions';
-import userAction from '../store/action';
+import { actions } from '../store';
+
 
 const rootAction = {
   router: routerActions,
-  user: userAction,
+  user: actions.userAction,
 };
 
-export type RootAction = ActionType<typeof rootAction>;
+type RootAction = ActionType<typeof rootAction>;
+export default RootAction;
