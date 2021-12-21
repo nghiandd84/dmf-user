@@ -10,7 +10,7 @@ import { AppRootService } from '../../services';
 
 
 
-export const loadTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService> = (
+export const userLoadTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService> = (
   action$,
   state$,
   { user }
@@ -25,7 +25,7 @@ export const loadTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService>
     )
   );
 
-export const saveTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService> = (
+export const userSaveTodosEpic: Epic<AppAction, AppAction, AppState, AppRootService> = (
   action$,
   state$,
   { user }

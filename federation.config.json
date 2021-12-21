@@ -8,6 +8,7 @@
     "./signup/SignUp": "./src/components/signup/SignUp/SignUp",
     "./UpdateUser": "./src/components/UpdateUser/UpdateUser",
     "./services": "./src/services/index",
-    "./store": "./src/store/index"
+    "./store": "./src/store/index",
+    "./todos": "./src/features/todos/index"
   }
 }
